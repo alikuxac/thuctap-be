@@ -3,9 +3,10 @@ import { AuthGuard } from '@nestjs/passport';
 import { CategoryService } from '#services/common/category.service';
 import { createCategorytDto } from '#dto/category.dto';
 import { Roles } from 'src/common/decorator/role.decorator';
-import { ApiBearerAuth } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 @Controller('category')
+@ApiTags('category')
 @ApiBearerAuth()
 @UseGuards(AuthGuard('jwt'))
 @Roles('admin')

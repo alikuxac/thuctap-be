@@ -3,9 +3,10 @@ import { FeedbackService } from '#services/common/feedback.service';
 import { createFeedbackDto } from '#dto/feedback.dto';
 import { Roles } from 'src/common/decorator/role.decorator';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiBearerAuth } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 @Controller('feedback')
+@ApiTags('feedback')
 @ApiBearerAuth()
 @UseGuards(AuthGuard('jwt'))
 @Roles('admin')

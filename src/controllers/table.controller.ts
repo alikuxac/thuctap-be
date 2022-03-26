@@ -10,10 +10,11 @@ import {
 import { TableService } from '#services/common/table.service';
 import { createTableDto, updateStatusTableDto } from '#dto/table.dto';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiBearerAuth } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { Roles } from 'src/common/decorator/role.decorator';
 
 @Controller('table')
+@ApiTags('table')
 @ApiBearerAuth()
 @UseGuards(AuthGuard('jwt'))
 @Roles('admin')

@@ -11,10 +11,11 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 import { VoucherService } from '#services/common/voucher.service';
 import { createVoucherDto, updateVoucherDto } from '#dto/voucher.dto';
-import { ApiBearerAuth } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { Roles } from 'src/common/decorator/role.decorator';
 
 @Controller('voucher')
+@ApiTags('voucher')
 @ApiBearerAuth()
 @UseGuards(AuthGuard('jwt'))
 @Roles('admin')

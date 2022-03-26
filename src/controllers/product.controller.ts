@@ -14,10 +14,11 @@ import {
   updateProductDto,
   updateProductPrice,
 } from '#dto/product/product.dto';
-import { ApiBearerAuth } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { Roles } from 'src/common/decorator/role.decorator';
 
 @Controller('product')
+@ApiTags('product')
 @ApiBearerAuth()
 @UseGuards(AuthGuard('jwt'))
 @Roles('admin')

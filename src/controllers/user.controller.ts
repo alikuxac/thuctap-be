@@ -11,10 +11,11 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 import { UserService } from '#services/user/user.service';
 import { createUserDto, updateUserDto } from '#dto/user/user.dto';
-import { ApiBearerAuth } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { Roles } from 'src/common/decorator/role.decorator';
 
 @ApiBearerAuth()
+@ApiTags('user')
 @Controller('user')
 @UseGuards(AuthGuard('jwt'))
 @Roles('admin')
